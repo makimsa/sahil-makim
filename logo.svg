@@ -1,0 +1,10 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="18" cy="18" r="16" fill="url(#gradient)"/>
+  <text x="18" y="24" font-family="Satoshi, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">S</text>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6d86f2"/>
+      <stop offset="100%" stop-color="#c491e8"/>
+    </linearGradient>
+  </defs>
+</svg>
