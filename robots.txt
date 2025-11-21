@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://makimsa.github.io/sahil-makim/sitemap.xml
