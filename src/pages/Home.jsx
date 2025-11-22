@@ -12,10 +12,19 @@ export default function Home() {
       setTimeout(() => {
         setExpandedItems(expandedItems.filter(item => item !== itemName));
         setClosingItems(closingItems.filter(item => item !== itemName));
-      }, 1000); // Increased to allow lines to slide out first
+      }, 500); // Reduced from 1000ms
     } else {
-      // Open the item
-      setExpandedItems([...expandedItems, itemName]);
+      // Close all other items first
+      if (expandedItems.length > 0) {
+        setClosingItems([...closingItems, ...expandedItems]);
+        setTimeout(() => {
+          setExpandedItems([itemName]);
+          setClosingItems([]);
+        }, 500); // Reduced from 1000ms
+      } else {
+        // Open the item
+        setExpandedItems([itemName]);
+      }
     }
   };
 
@@ -66,8 +75,8 @@ export default function Home() {
                       <div className="content-lines">
                         {section.content.split('. ').map((sentence, index, arr) => {
                           const isClosing = closingItems.includes(section.name);
-                          const openDelay = 0.3 + index * 0.15;
-                          const closeDelay = (arr.length - 1 - index) * 0.1;
+                          const openDelay = 0.1 + index * 0.08;
+                          const closeDelay = (arr.length - 1 - index) * 0.05;
                           return (
                             <span 
                               key={index} 
