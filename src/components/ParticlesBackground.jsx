@@ -1,22 +1,16 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
-export default function ParticlesBackground() {
+export default function ParticlesBackground({ className }) {
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine);
   }, []);
 
-  const particlesConfig = {
-    background: {
-      image: "url('/sahil-makim/background.jpg')",
-      position: "center",
-      repeat: "no-repeat",
-      size: "cover"
-    },
+  const particlesConfig = useMemo(() => ({
     particles: {
       number: {
-        value: 200,
+        value: 100,
         density: {
           enable: false,
           value_area: 200
@@ -57,7 +51,7 @@ export default function ParticlesBackground() {
       },
       links: {
         enable: true,
-        distance: 75,
+        distance: 100,
         color: "#000000ff",
         opacity: 0.749690259550659,
         width: 1.3
@@ -85,7 +79,7 @@ export default function ParticlesBackground() {
           mode: "grab"
         },
         onclick: {
-          enable: true,
+          enable: false,
           mode: "repulse"
         },
         resize: true
@@ -117,13 +111,14 @@ export default function ParticlesBackground() {
       }
     },
     retina_detect: true
-  };
+  }), []);
 
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
       options={particlesConfig}
+      className={className}
       style={{
         position: "fixed",
         top: 0,

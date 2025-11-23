@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import About from './pages/About';
 import ParticlesBackground from './components/ParticlesBackground';
+import LoadingScreen from './components/LoadingScreen';
 import logo from '/logo.svg';
 import './App.css';
 
@@ -53,6 +54,7 @@ const projectsData = [
 function App() {
   const [currentPage, setCurrentPage] = useState('Home');
   const [displayPage, setDisplayPage] = useState('Home');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (currentPage !== displayPage) {
@@ -97,23 +99,29 @@ function App() {
 
   return (
     <>
-      <ParticlesBackground />
-      <div className="app">
-        <PillNav
-          logo={logo}
-          logoAlt="SM Logo"
-          items={items}
-          activeHref={currentPage}
-          baseColor="transparent"
-          pillColor="rgba(109, 134, 242, 0.7)"
-          hoveredPillTextColor="#ffffff"
-          pillTextColor="#ffffff"
-          initialLoadAnimation={false}
-        />
-        <div className="page-transition">
-          {renderPage()}
-        </div>
-      </div>
+      {isLoading ? (
+        <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+      ) : (
+        <>
+          <ParticlesBackground />
+          <div className="app">
+            <PillNav
+              logo={logo}
+              logoAlt="SM Logo"
+              items={items}
+              activeHref={currentPage}
+              baseColor="transparent"
+              pillColor="rgba(109, 134, 242, 0.7)"
+              hoveredPillTextColor="#ffffff"
+              pillTextColor="#ffffff"
+              initialLoadAnimation={false}
+            />
+            <div className="page-transition">
+              {renderPage()}
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }

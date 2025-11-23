@@ -54,8 +54,12 @@
 .about-description p {
   color: #aaa;
   line-height: 1.8;
-  margin: 0;
+  margin-bottom: 1rem;
   text-align: left;
+}
+
+.about-description p:last-child {
+  margin-bottom: 0;
 }
 
 .skills-section {
@@ -63,9 +67,25 @@
 }
 
 .skills-section h2 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
   color: #fff;
+}
+
+.skill-category {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.skill-category h3 {
+  font-size: 1rem;
+  color: #667eea;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.skill-category .skills {
+  justify-content: flex-start;
 }
 
 .skills {
