@@ -54,19 +54,34 @@ const projectsData = [
 function App() {
   const [currentPage, setCurrentPage] = useState('Home');
   const [displayPage, setDisplayPage] = useState('Home');
+  const [isExiting, setIsExiting] = useState(false);
+  const [isEntering, setIsEntering] = useState(false);
+  const [nextPage, setNextPage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    if (currentPage !== displayPage) {
-      // Instant page switch, no sliding animation
-      setDisplayPage(currentPage);
-    }
-  }, [currentPage, displayPage]);
+  // handle actual page switching with exit/enter animations
+  // Enter animation is triggered immediately when loading completes or when a new page is shown.
 
   const handlePageChange = (page) => {
-    if (page !== currentPage) {
-      setCurrentPage(page);
-    }
+    if (page === currentPage) return;
+
+    // update nav active state immediately
+    setCurrentPage(page);
+
+    // start exit animation for currently displayed page, then swap
+    setIsExiting(true);
+    setNextPage(page);
+    const exitDuration = 420; // matches CSS animation time
+    setTimeout(() => {
+      // swap page synchronously when exit completes
+      setDisplayPage(page);
+      setIsExiting(false);
+      setNextPage(null);
+
+      // trigger enter animation immediately so the page isn't visible before animating
+      setIsEntering(true);
+      setTimeout(() => setIsEntering(false), 420);
+    }, exitDuration);
   };
 
   const items = [
@@ -100,7 +115,12 @@ function App() {
   return (
     <>
       {isLoading ? (
-        <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+        <LoadingScreen onLoadingComplete={() => {
+          // mark loading finished and immediately trigger the enter animation
+          setIsLoading(false);
+          setIsEntering(true);
+          setTimeout(() => setIsEntering(false), 420);
+        }} />
       ) : (
         <>
           <ParticlesBackground />
@@ -116,7 +136,13 @@ function App() {
               pillTextColor="#ffffff"
               initialLoadAnimation={false}
             />
-            <div className="page-transition">
+            <div
+              className={
+                `page-transition ${isExiting ? 'animate__animated animate__fadeOutUp' : ''} ${
+                  isEntering ? 'animate__animated animate__fadeInDown' : ''
+                }`
+              }
+            >
               {renderPage()}
             </div>
           </div>

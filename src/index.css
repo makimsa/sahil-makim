@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600;700&display=swap');
 
 /* Satoshi Font */
 @font-face {
@@ -54,16 +54,27 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-  background-image: url('/sahil-makim/background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+    /* Keep the background image but darken it slightly with an overlay.
+      Adjust the alpha in rgba(...) to make the image darker or lighter. */
+    background: linear-gradient(rgba(0,0,0,0.32), rgba(0,0,0,0.32)), url('/sahil-makim/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Satoshi', sans-serif;
 }
 
 h1 {
@@ -115,4 +126,40 @@ button:focus,
 button:focus-visible {
   outline: 2px solid #667eea;
   outline-offset: 2px;
+}
+
+/* Simple animate.css-like helpers for page transitions */
+.animate__animated {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__fadeInDown {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+.animate__fadeOutUp {
+  animation-name: fadeOutUp;
 }

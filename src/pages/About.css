@@ -10,31 +10,55 @@
 .content {
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 0rem 1rem;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #6d86f2 0%, #c491e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.about-subtitle {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 0;
 }
 
 .about-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
-  padding: 3rem;
+  padding: 2.5rem 4rem 4rem; /* reduce top padding so image sits closer to top */
   text-align: center;
-  max-width: 700px;
+  max-width: 920px; /* increased width to show more content */
+  width: 100%;
   margin: 0 auto;
 }
 
-.about-avatar {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
+.page-top-profile {
+  display: block;
+  width: 200px; /* slightly larger */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 1rem; /* reduce bottom spacing a bit */
+  box-shadow: 0 8px 20px rgba(2, 48, 71, 0.45);
+}
+
+.about-card h1 {
+  font-size: 1.6rem;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
 }
 
 .about-bio {
@@ -116,6 +140,45 @@
   margin-top: 2rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-images {
+  max-width: 920px;
+  margin: 1.5rem auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.about-images img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-images img:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(2, 48, 71, 0.35);
+}
+
+@media (max-width: 768px) {
+  .about-card {
+    padding: 1.5rem; /* reduce padding on small screens */
+    margin: 1rem;
+  }
+  /* avatar removed; keep layout responsive */
+  .page-top-profile {
+    width: 160px;
+    height: 160px;
+  }
+  .about-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
 }
 
 .stat {

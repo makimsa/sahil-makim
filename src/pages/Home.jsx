@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import TypingText from '../components/TypingText';
 import './Home.css';
 
 export default function Home() {
@@ -255,21 +254,10 @@ export default function Home() {
     <div className="page">
       <div className="content">
         <div className="hero">
-          <h1>
-            <TypingText 
-              text="Hi, I'm Sahil Makim" 
-              typingSpeed={40}
-              showCursor={false}
-            />
+          <h1 className="draw-title" data-text={"Hi, I'm Sahil Makim"}>
+            <span data-text={"Hi, I'm Sahil Makim"}>Hi, I'm Sahil Makim</span>
           </h1>
-          <p className="subtitle">
-            <TypingText 
-              text="Computer Engineering • Georgia Tech" 
-              typingSpeed={30}
-              initialDelay={800}
-              showCursor={false}
-            />
-          </p>
+          <p className="subtitle">Computer Engineering • Georgia Tech</p>
         </div>
 
         <div className="section">
@@ -281,13 +269,7 @@ export default function Home() {
                 onClick={() => toggleItem(section.name)}
               >
                 <div className="feature-content">
-                  <h3>
-                    <TypingText 
-                      text={section.name} 
-                      typingSpeed={25}
-                      showCursor={false}
-                    />
-                  </h3>
+                  <h3>{section.name}</h3>
                   {(expandedItems.includes(section.name) || closingItems.includes(section.name)) && (
                     <div className={`expanded-content ${closingItems.includes(section.name) ? 'collapsing' : ''}`}>
                       {section.isCustom ? (

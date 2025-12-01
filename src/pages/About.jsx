@@ -4,10 +4,13 @@ export default function About() {
   return (
     <div className="page">
       <div className="content">
+        <div className="about-header">
+          <h1 className="about-title">About</h1>
+          <p className="about-subtitle">Here's a little more about me!</p>
+        </div>
         <div className="about-card">
-          <div className="about-avatar">
-            <span>SM</span>
-          </div>
+          {/* Top profile image - place `public/Profile.jpeg` in the `public/` folder */}
+          <img className="page-top-profile" src="/sahil-makim/Profile.jpeg" alt="Sahil Makim" />
           <h1>Sahil Makim</h1>
           <p className="about-bio">Computer Engineering Student • Hardware & Embedded Systems</p>
           
@@ -106,7 +109,19 @@ export default function About() {
               <span className="stat-value">25+</span>
               <span className="stat-label">Technical Skills</span>
             </div>
+            <div className="stat">
+              <span className="stat-value">∞</span>
+              <span className="stat-label">Coffees</span>
+            </div>
           </div>
+        </div>
+        
+        {/* Images section - add your images to `public/sahil-makim/images/` and name them image1.jpg..image4.jpg */}
+        <div className="about-images">
+          <img src="/sahil-makim/images/Amsterdam.jpeg" alt="Amsterdam" />
+          <img src="/sahil-makim/images/Bridge.jpeg" alt="Bridge" />
+          <img src="/sahil-makim/images/France.JPG" alt="France" />
+          <img src="/sahil-makim/images/Swiss.jpeg" alt="Swiss" />
         </div>
       </div>
     </div>

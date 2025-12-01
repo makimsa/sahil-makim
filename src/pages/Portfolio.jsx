@@ -120,8 +120,8 @@ export default function Portfolio() {
         {!expandedItem ? (
           <div className={`portfolio-grid-view ${isTransitioning ? 'fade-out' : ''}`}>
             <div className="portfolio-header">
-              <h1>Portfolio</h1>
-              <p>Check out my latest projects and work.</p>
+              <h1 className="portfolio-title">Portfolio</h1>
+              <p className="portfolio-subtitle">Check out my latest projects and work.</p>
             </div>
             
             <div className="portfolio-grid">
@@ -182,7 +182,20 @@ export default function Portfolio() {
                         <p>{project.details}</p>
                       </>
                     )}
-                    
+
+                    {/* Project media (images / videos) - Info Center specific media */}
+                    {project?.id === 2 && (
+                      <div className="project-media">
+                        <img src="/sahil-makim/InfoCenter/InfoCenter1.HEIC" alt="InfoCenter 1" />
+                        <img src="/sahil-makim/InfoCenter/InfoCenter2.HEIC" alt="InfoCenter 2" />
+                        <img src="/sahil-makim/InfoCenter/InfoCenter3.HEIC" alt="InfoCenter 3" />
+                        <video controls>
+                          <source src="/sahil-makim/InfoCenter/InfoCenterDemo.MOV" type="video/quicktime" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    )}
+
                     <div className="other-projects">
                       <h3>View Other Projects</h3>
                       <div className="project-links">
