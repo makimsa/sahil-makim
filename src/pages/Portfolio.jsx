@@ -189,10 +189,15 @@ export default function Portfolio() {
                         <img src="/sahil-makim/InfoCenter/InfoCenter1.HEIC" alt="InfoCenter 1" />
                         <img src="/sahil-makim/InfoCenter/InfoCenter2.HEIC" alt="InfoCenter 2" />
                         <img src="/sahil-makim/InfoCenter/InfoCenter3.HEIC" alt="InfoCenter 3" />
-                        <video controls>
-                          <source src="/sahil-makim/InfoCenter/InfoCenterDemo.MOV" type="video/quicktime" />
-                          Your browser does not support the video tag.
-                        </video>
+                        <iframe
+                          width="100%"
+                          height="315"
+                          src="https://www.youtube.com/embed/ymF4S1uxj-8"
+                          title="InfoCenter Demo Video"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
                       </div>
                     )}
 
