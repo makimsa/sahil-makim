@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import './Portfolio.css';
+import ImageModal from '../components/ImageModal';
 
 export default function Portfolio() {
+  const imageModal = ImageModal();
   const [expandedItem, setExpandedItem] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [clickedItem, setClickedItem] = useState(null);
@@ -183,12 +185,27 @@ export default function Portfolio() {
                       </>
                     )}
 
+                    {/* Nintendo DSi Homebrew - id 1 */}
+                    {project?.id === 1 && (
+                      <div className="project-media">
+                        <iframe
+                          width="100%"
+                          height="315"
+                          src="https://www.youtube.com/embed/slw4brDodVs"
+                          title="Nintendo DSi Homebrew Demo"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+                    )}
+
                     {/* Project media (images / videos) - Info Center specific media */}
                     {project?.id === 2 && (
                       <div className="project-media">
-                        <img src="/sahil-makim/InfoCenter/InfoCenter1.HEIC" alt="InfoCenter 1" />
-                        <img src="/sahil-makim/InfoCenter/InfoCenter2.HEIC" alt="InfoCenter 2" />
-                        <img src="/sahil-makim/InfoCenter/InfoCenter3.HEIC" alt="InfoCenter 3" />
+                        <img src="/sahil-makim/InfoCenter/InfoCenter1.jpg" alt="InfoCenter 1" onClick={() => imageModal.openModal('/sahil-makim/InfoCenter/InfoCenter1.jpg')} style={{ cursor: 'pointer' }} />
+                        <img src="/sahil-makim/InfoCenter/InfoCenter2.jpg" alt="InfoCenter 2" onClick={() => imageModal.openModal('/sahil-makim/InfoCenter/InfoCenter2.jpg')} style={{ cursor: 'pointer' }} />
+                        <img src="/sahil-makim/InfoCenter/InfoCenter3.jpg" alt="InfoCenter 3" onClick={() => imageModal.openModal('/sahil-makim/InfoCenter/InfoCenter3.jpg')} style={{ cursor: 'pointer' }} />
                         <iframe
                           width="100%"
                           height="315"
@@ -198,6 +215,58 @@ export default function Portfolio() {
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           allowFullScreen
                         />
+                      </div>
+                    )}
+
+                    {/* MBED Wordle Game - id 3 */}
+                    {project?.id === 3 && (
+                      <div className="project-media">
+                        <img src="/sahil-makim/wordle/Wordle1.png" alt="Wordle Game 1" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle1.png')} style={{ cursor: 'pointer' }} />
+                        <img src="/sahil-makim/wordle/Wordle2.png" alt="Wordle Game 2" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle2.png')} style={{ cursor: 'pointer' }} />
+                        <img src="/sahil-makim/wordle/Wordle4.png" alt="Wordle Game 4" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle4.png')} style={{ cursor: 'pointer' }} />
+                        <img src="/sahil-makim/wordle/Wordle3.png" alt="Wordle Game 3" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle3.png')} style={{ cursor: 'pointer' }} />
+                        <iframe
+                          width="100%"
+                          height="315"
+                          src="https://www.youtube.com/embed/yWpzRPizdns"
+                          title="Wordle Game Demo 1"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                        <iframe
+                          width="100%"
+                          height="315"
+                          src="https://www.youtube.com/embed/0NOXoXY1yN8"
+                          title="Wordle Game Demo 2"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+                    )}
+
+                    {/* Servo Motor FPGA - id 4 */}
+                    {project?.id === 4 && (
+                      <div className="project-media">
+                        <img src="/sahil-makim/Servo/Servo1.png" alt="Servo Motor Control 1" onClick={() => imageModal.openModal('/sahil-makim/Servo/Servo1.png')} style={{ cursor: 'pointer' }} />
+                        <iframe
+                          width="100%"
+                          height="315"
+                          src="https://www.youtube.com/embed/tR8Dxw9VUYk"
+                          title="Servo Motor FPGA Demo"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+                    )}
+
+                    {/* MIPS Image Icon Comparison - id 6 */}
+                    {project?.id === 6 && (
+                      <div className="project-media">
+                        <img src="/sahil-makim/icon/Icon1.png" alt="Icon Comparison 1" onClick={() => imageModal.openModal('/sahil-makim/icon/Icon1.png')} style={{ cursor: 'pointer' }} />
+                        <img src="/sahil-makim/icon/Icon2.png" alt="Icon Comparison 2" onClick={() => imageModal.openModal('/sahil-makim/icon/Icon2.png')} style={{ cursor: 'pointer' }} />
                       </div>
                     )}
 
@@ -222,6 +291,7 @@ export default function Portfolio() {
           </div>
         )}
       </div>
+      <imageModal.Modal />
     </div>
   );
 }

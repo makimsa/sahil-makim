@@ -230,11 +230,21 @@
 .project-media img,
 .project-media video {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   border-radius: 0.75rem;
   display: block;
   background: #111;
+}
+
+.project-media img {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-media img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(109, 134, 242, 0.3);
 }
 
 .project-media video {

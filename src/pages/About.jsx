@@ -1,18 +1,24 @@
 import './About.css';
+import ImageModal from '../components/ImageModal';
 
 export default function About() {
+  const imageModal = ImageModal();
   return (
     <div className="page">
       <div className="content">
-        <div className="about-header">
-          <h1 className="about-title">About</h1>
-          <p className="about-subtitle">Here's a little more about me!</p>
-        </div>
         <div className="about-card">
-          {/* Top profile image - place `public/Profile.jpeg` in the `public/` folder */}
-          <img className="page-top-profile" src="/sahil-makim/Profile.jpeg" alt="Sahil Makim" />
-          <h1>Sahil Makim</h1>
-          <p className="about-bio">Computer Engineering Student • Hardware & Embedded Systems</p>
+          <div className="about-top-section">
+            <div className="about-header-left">
+              <h1 className="about-title">About</h1>
+              <p className="about-subtitle">Here's a little more about me!</p>
+            </div>
+            <div className="about-divider"></div>
+            <div className="about-profile-right">
+              <img className="page-top-profile" src="/sahil-makim/Profile.jpeg" alt="Sahil Makim" onClick={() => imageModal.openModal('/sahil-makim/Profile.jpeg')} style={{ cursor: 'pointer' }} />
+              <h1>Sahil Makim</h1>
+              <p className="about-bio">Hardware & Embedded Systems</p>
+            </div>
+          </div>
           
           <div className="about-description">
             <p>
@@ -118,12 +124,13 @@ export default function About() {
         
         {/* Images section - add your images to `public/sahil-makim/images/` and name them image1.jpg..image4.jpg */}
         <div className="about-images">
-          <img src="/sahil-makim/images/Amsterdam.jpeg" alt="Amsterdam" />
-          <img src="/sahil-makim/images/Bridge.jpeg" alt="Bridge" />
-          <img src="/sahil-makim/images/France.JPG" alt="France" />
-          <img src="/sahil-makim/images/Swiss.jpeg" alt="Swiss" />
+          <img src="/sahil-makim/images/Amsterdam.jpeg" alt="Amsterdam" onClick={() => imageModal.openModal('/sahil-makim/images/Amsterdam.jpeg')} style={{ cursor: 'pointer' }} />
+          <img src="/sahil-makim/images/Bridge.jpeg" alt="Bridge" onClick={() => imageModal.openModal('/sahil-makim/images/Bridge.jpeg')} style={{ cursor: 'pointer' }} />
+          <img src="/sahil-makim/images/France.JPG" alt="France" onClick={() => imageModal.openModal('/sahil-makim/images/France.JPG')} style={{ cursor: 'pointer' }} />
+          <img src="/sahil-makim/images/Swiss.jpeg" alt="Swiss" onClick={() => imageModal.openModal('/sahil-makim/images/Swiss.jpeg')} style={{ cursor: 'pointer' }} />
         </div>
       </div>
+      <imageModal.Modal />
     </div>
   );
 }

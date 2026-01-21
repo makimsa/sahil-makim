@@ -46,7 +46,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
                 transition={{ duration: 0.5, ease: 'easeOut' }}
               >
                 <RotatingText
-                  text={["hello", "bonjour", "નમસ્તે", "hola"]}
+                  text={["Hello", "Bonjour", "નમસ્તે", "Hola"]}
                   duration={1000}
                   className="rotating-greeting"
                 />

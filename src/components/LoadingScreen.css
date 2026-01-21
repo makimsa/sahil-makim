@@ -20,11 +20,11 @@
 }
 
 .rotating-greeting {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2rem;
   /* Allow the browser to synthesize an italic face when the font has no italic variant.
      The project root sets `font-synthesis: none`, so we enable style synthesis here. */
-  font-synthesis: style;
+  font-style: italic;
   font-weight: 700;
   background: linear-gradient(135deg, #6d86f2 0%, #c491e8 100%);
   -webkit-background-clip: text;

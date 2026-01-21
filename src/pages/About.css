@@ -38,24 +38,70 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
-  padding: 2.5rem 4rem 4rem; /* reduce top padding so image sits closer to top */
-  text-align: center;
-  max-width: 920px; /* increased width to show more content */
+  padding: 2.5rem 4rem 4rem;
+  max-width: 920px;
   width: 100%;
   margin: 0 auto;
 }
 
-.page-top-profile {
-  display: block;
-  width: 200px; /* slightly larger */
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin: 0 auto 1rem; /* reduce bottom spacing a bit */
-  box-shadow: 0 8px 20px rgba(2, 48, 71, 0.45);
+.about-top-section {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.about-card h1 {
+.about-header-left {
+  text-align: left;
+}
+
+.about-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #6d86f2 0%, #c491e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.about-subtitle {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 0;
+}
+
+.about-divider {
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+}
+
+.about-profile-right {
+  text-align: center;
+}
+
+.page-top-profile {
+  display: block;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 1rem;
+  box-shadow: 0 8px 20px rgba(2, 48, 71, 0.45);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-top-profile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(109, 134, 242, 0.4);
+}
+
+.about-profile-right h1 {
   font-size: 1.6rem;
   margin: 0 0 0.5rem 0;
   text-align: center;
@@ -64,8 +110,8 @@
 .about-bio {
   color: #888;
   margin-top: 0.5rem;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 .about-description {
@@ -158,6 +204,7 @@
   border-radius: 0.75rem;
   display: block;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 .about-images img:hover {
@@ -166,15 +213,36 @@
 }
 
 @media (max-width: 768px) {
+  .about-top-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    border-bottom: none;
+    margin-bottom: 2rem;
+    padding-bottom: 0;
+  }
+
+  .about-header-left {
+    text-align: center;
+  }
+
+  .about-title {
+    font-size: 2.2rem;
+  }
+
+  .about-divider {
+    display: none;
+  }
+
   .about-card {
-    padding: 1.5rem; /* reduce padding on small screens */
+    padding: 1.5rem;
     margin: 1rem;
   }
-  /* avatar removed; keep layout responsive */
+
   .page-top-profile {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
   }
+
   .about-images {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
