@@ -197,7 +197,8 @@
   padding: 0 1rem;
 }
 
-.about-images img {
+.about-images img,
+.about-images .lazy-load-image-loaded img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
@@ -207,7 +208,8 @@
   cursor: pointer;
 }
 
-.about-images img:hover {
+.about-images img:hover,
+.about-images .lazy-load-image-loaded img:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 10px 30px rgba(2, 48, 71, 0.35);
 }

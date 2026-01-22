@@ -75,7 +75,7 @@ export default function ParticlesBackground({ className }) {
       detect_on: "window",
       events: {
         onhover: {
-          enable: true,
+          enable: false,
           mode: "grab"
         },
         onclick: {
@@ -110,7 +110,7 @@ export default function ParticlesBackground({ className }) {
         }
       }
     },
-    retina_detect: true
+    retina_detect: false
   }), []);
 
   return (

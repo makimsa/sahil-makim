@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Portfolio.css';
 import ImageModal from '../components/ImageModal';
 
@@ -203,9 +205,9 @@ export default function Portfolio() {
                     {/* Project media (images / videos) - Info Center specific media */}
                     {project?.id === 2 && (
                       <div className="project-media">
-                        <img src="/sahil-makim/InfoCenter/InfoCenter1.jpg" alt="InfoCenter 1" onClick={() => imageModal.openModal('/sahil-makim/InfoCenter/InfoCenter1.jpg')} style={{ cursor: 'pointer' }} />
-                        <img src="/sahil-makim/InfoCenter/InfoCenter2.jpg" alt="InfoCenter 2" onClick={() => imageModal.openModal('/sahil-makim/InfoCenter/InfoCenter2.jpg')} style={{ cursor: 'pointer' }} />
-                        <img src="/sahil-makim/InfoCenter/InfoCenter3.jpg" alt="InfoCenter 3" onClick={() => imageModal.openModal('/sahil-makim/InfoCenter/InfoCenter3.jpg')} style={{ cursor: 'pointer' }} />
+                        <LazyLoadImage src="/sahil-makim/InfoCenter/InfoCenter1_optimized.jpg" alt="InfoCenter 1" onClick={() => imageModal.openModal('/sahil-makim/InfoCenter/InfoCenter1_optimized.jpg')} style={{ cursor: 'pointer' }} effect="blur" />
+                        <LazyLoadImage src="/sahil-makim/InfoCenter/InfoCenter2_optimized.jpg" alt="InfoCenter 2" onClick={() => imageModal.openModal('/sahil-makim/InfoCenter/InfoCenter2_optimized.jpg')} style={{ cursor: 'pointer' }} effect="blur" />
+                        <LazyLoadImage src="/sahil-makim/InfoCenter/InfoCenter3_optimized.jpg" alt="InfoCenter 3" onClick={() => imageModal.openModal('/sahil-makim/InfoCenter/InfoCenter3_optimized.jpg')} style={{ cursor: 'pointer' }} effect="blur" />
                         <iframe
                           width="100%"
                           height="315"
@@ -221,10 +223,10 @@ export default function Portfolio() {
                     {/* MBED Wordle Game - id 3 */}
                     {project?.id === 3 && (
                       <div className="project-media">
-                        <img src="/sahil-makim/wordle/Wordle1.png" alt="Wordle Game 1" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle1.png')} style={{ cursor: 'pointer' }} />
-                        <img src="/sahil-makim/wordle/Wordle2.png" alt="Wordle Game 2" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle2.png')} style={{ cursor: 'pointer' }} />
-                        <img src="/sahil-makim/wordle/Wordle4.png" alt="Wordle Game 4" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle4.png')} style={{ cursor: 'pointer' }} />
-                        <img src="/sahil-makim/wordle/Wordle3.png" alt="Wordle Game 3" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle3.png')} style={{ cursor: 'pointer' }} />
+                        <LazyLoadImage src="/sahil-makim/wordle/Wordle1_optimized.png" alt="Wordle Game 1" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle1_optimized.png')} style={{ cursor: 'pointer' }} effect="blur" />
+                        <LazyLoadImage src="/sahil-makim/wordle/Wordle2_optimized.png" alt="Wordle Game 2" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle2_optimized.png')} style={{ cursor: 'pointer' }} effect="blur" />
+                        <LazyLoadImage src="/sahil-makim/wordle/Wordle4_optimized.png" alt="Wordle Game 4" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle4_optimized.png')} style={{ cursor: 'pointer' }} effect="blur" />
+                        <LazyLoadImage src="/sahil-makim/wordle/Wordle3_optimized.png" alt="Wordle Game 3" onClick={() => imageModal.openModal('/sahil-makim/wordle/Wordle3_optimized.png')} style={{ cursor: 'pointer' }} effect="blur" />
                         <iframe
                           width="100%"
                           height="315"
@@ -249,7 +251,7 @@ export default function Portfolio() {
                     {/* Servo Motor FPGA - id 4 */}
                     {project?.id === 4 && (
                       <div className="project-media">
-                        <img src="/sahil-makim/Servo/Servo1.png" alt="Servo Motor Control 1" onClick={() => imageModal.openModal('/sahil-makim/Servo/Servo1.png')} style={{ cursor: 'pointer' }} />
+                        <LazyLoadImage src="/sahil-makim/Servo/Servo1_optimized.png" alt="Servo Motor Control 1" onClick={() => imageModal.openModal('/sahil-makim/Servo/Servo1_optimized.png')} style={{ cursor: 'pointer' }} effect="blur" />
                         <iframe
                           width="100%"
                           height="315"
@@ -265,8 +267,8 @@ export default function Portfolio() {
                     {/* MIPS Image Icon Comparison - id 6 */}
                     {project?.id === 6 && (
                       <div className="project-media">
-                        <img src="/sahil-makim/icon/Icon1.png" alt="Icon Comparison 1" onClick={() => imageModal.openModal('/sahil-makim/icon/Icon1.png')} style={{ cursor: 'pointer' }} />
-                        <img src="/sahil-makim/icon/Icon2.png" alt="Icon Comparison 2" onClick={() => imageModal.openModal('/sahil-makim/icon/Icon2.png')} style={{ cursor: 'pointer' }} />
+                        <LazyLoadImage src="/sahil-makim/icon/Icon1_optimized.png" alt="Icon Comparison 1" onClick={() => imageModal.openModal('/sahil-makim/icon/Icon1_optimized.png')} style={{ cursor: 'pointer' }} effect="blur" />
+                        <LazyLoadImage src="/sahil-makim/icon/Icon2_optimized.png" alt="Icon Comparison 2" onClick={() => imageModal.openModal('/sahil-makim/icon/Icon2_optimized.png')} style={{ cursor: 'pointer' }} effect="blur" />
                       </div>
                     )}
 

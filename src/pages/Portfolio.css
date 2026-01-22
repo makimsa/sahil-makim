@@ -228,7 +228,8 @@
 }
 
 .project-media img,
-.project-media video {
+.project-media video,
+.project-media .lazy-load-image-loaded {
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -237,12 +238,14 @@
   background: #111;
 }
 
-.project-media img {
+.project-media img,
+.project-media .lazy-load-image-loaded img {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-media img:hover {
+.project-media img:hover,
+.project-media .lazy-load-image-loaded img:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(109, 134, 242, 0.3);
 }

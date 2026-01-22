@@ -1,3 +1,5 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import './About.css';
 import ImageModal from '../components/ImageModal';
 
@@ -14,7 +16,7 @@ export default function About() {
             </div>
             <div className="about-divider"></div>
             <div className="about-profile-right">
-              <img className="page-top-profile" src="/sahil-makim/Profile.jpeg" alt="Sahil Makim" onClick={() => imageModal.openModal('/sahil-makim/Profile.jpeg')} style={{ cursor: 'pointer' }} />
+              <LazyLoadImage className="page-top-profile" src="/sahil-makim/Profile_optimized.jpg" alt="Sahil Makim" onClick={() => imageModal.openModal('/sahil-makim/Profile_optimized.jpg')} style={{ cursor: 'pointer' }} effect="blur" />
               <h1>Sahil Makim</h1>
               <p className="about-bio">Hardware & Embedded Systems</p>
             </div>
@@ -124,10 +126,10 @@ export default function About() {
         
         {/* Images section - add your images to `public/sahil-makim/images/` and name them image1.jpg..image4.jpg */}
         <div className="about-images">
-          <img src="/sahil-makim/images/Amsterdam.jpeg" alt="Amsterdam" onClick={() => imageModal.openModal('/sahil-makim/images/Amsterdam.jpeg')} style={{ cursor: 'pointer' }} />
-          <img src="/sahil-makim/images/Bridge.jpeg" alt="Bridge" onClick={() => imageModal.openModal('/sahil-makim/images/Bridge.jpeg')} style={{ cursor: 'pointer' }} />
-          <img src="/sahil-makim/images/France.JPG" alt="France" onClick={() => imageModal.openModal('/sahil-makim/images/France.JPG')} style={{ cursor: 'pointer' }} />
-          <img src="/sahil-makim/images/Swiss.jpeg" alt="Swiss" onClick={() => imageModal.openModal('/sahil-makim/images/Swiss.jpeg')} style={{ cursor: 'pointer' }} />
+          <LazyLoadImage src="/sahil-makim/images/Amsterdam_optimized.jpg" alt="Amsterdam" onClick={() => imageModal.openModal('/sahil-makim/images/Amsterdam_optimized.jpg')} style={{ cursor: 'pointer' }} effect="blur" />
+          <LazyLoadImage src="/sahil-makim/images/Bridge_optimized.jpg" alt="Bridge" onClick={() => imageModal.openModal('/sahil-makim/images/Bridge_optimized.jpg')} style={{ cursor: 'pointer' }} effect="blur" />
+          <LazyLoadImage src="/sahil-makim/images/France_optimized.jpg" alt="France" onClick={() => imageModal.openModal('/sahil-makim/images/France_optimized.jpg')} style={{ cursor: 'pointer' }} effect="blur" />
+          <LazyLoadImage src="/sahil-makim/images/Swiss_optimized.jpg" alt="Swiss" onClick={() => imageModal.openModal('/sahil-makim/images/Swiss_optimized.jpg')} style={{ cursor: 'pointer' }} effect="blur" />
         </div>
       </div>
       <imageModal.Modal />
